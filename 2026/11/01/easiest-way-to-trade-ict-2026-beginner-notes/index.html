@@ -1,0 +1,1652 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Corey Cheng">
+  <meta name="keywords" content="ICT,流动性,FVG,Fair Value Gap,交易系统">
+  
+    <meta name="description" content="从 ICT 基础概念到纽约时段的机械交易流程，整理成一份带 27 张原视频截图和 6 张教学图的完整课程笔记。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ICT 2026 新手完整课程：流动性、时间与机械交易流程">
+<meta property="og:url" content="https://corezcy.github.io/2026/11/01/easiest-way-to-trade-ict-2026-beginner-notes/index.html">
+<meta property="og:site_name" content="corezcy.github.io">
+<meta property="og:description" content="从 ICT 基础概念到纽约时段的机械交易流程，整理成一份带 27 张原视频截图和 6 张教学图的完整课程笔记。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://corezcy.github.io/img/posts/easiest-way-to-trade-ict-2026-notes/01_core_logic.png">
+<meta property="og:image" content="https://corezcy.github.io/img/posts/easiest-way-to-trade-ict-2026-notes/video_frames/03m00s_liquidity.jpg">
+<meta property="og:image" content="https://corezcy.github.io/img/posts/easiest-way-to-trade-ict-2026-notes/video_frames/09m05s_trapped.jpg">
+<meta property="og:image" content="https://corezcy.github.io/img/posts/easiest-way-to-trade-ict-2026-notes/video_frames/07m13s_candles.jpg">
+<meta property="og:image" content="https://corezcy.github.io/img/posts/easiest-way-to-trade-ict-2026-notes/video_frames/08m20s_swings.jpg">
+<meta property="og:image" content="https://corezcy.github.io/img/posts/easiest-way-to-trade-ict-2026-notes/02_market_structure.png">
+<meta property="og:image" content="https://corezcy.github.io/img/posts/easiest-way-to-trade-ict-2026-notes/video_frames/13m30s_structure_chart.jpg">
+<meta property="og:image" content="https://corezcy.github.io/img/posts/easiest-way-to-trade-ict-2026-notes/video_frames/14m20s_structure_chart2.jpg">
+<meta property="og:image" content="https://corezcy.github.io/img/posts/easiest-way-to-trade-ict-2026-notes/video_frames/17m50s_premium_fib.jpg">
+<meta property="og:image" content="https://corezcy.github.io/img/posts/easiest-way-to-trade-ict-2026-notes/03_irl_erl_cycle.png">
+<meta property="og:image" content="https://corezcy.github.io/img/posts/easiest-way-to-trade-ict-2026-notes/video_frames/23m55s_irl_chart2.jpg">
+<meta property="og:image" content="https://corezcy.github.io/img/posts/easiest-way-to-trade-ict-2026-notes/video_frames/19m34s_timeframes.jpg">
+<meta property="og:image" content="https://corezcy.github.io/img/posts/easiest-way-to-trade-ict-2026-notes/video_frames/27m40s_keylevels.jpg">
+<meta property="og:image" content="https://corezcy.github.io/img/posts/easiest-way-to-trade-ict-2026-notes/video_frames/29m24s_bos_fvg.jpg">
+<meta property="og:image" content="https://corezcy.github.io/img/posts/easiest-way-to-trade-ict-2026-notes/video_frames/34m36s_ifvg.jpg">
+<meta property="og:image" content="https://corezcy.github.io/img/posts/easiest-way-to-trade-ict-2026-notes/video_frames/36m08s_delivery.jpg">
+<meta property="og:image" content="https://corezcy.github.io/img/posts/easiest-way-to-trade-ict-2026-notes/video_frames/39m18s_orderblock.jpg">
+<meta property="og:image" content="https://corezcy.github.io/img/posts/easiest-way-to-trade-ict-2026-notes/video_frames/40m46s_time_liquidity.jpg">
+<meta property="og:image" content="https://corezcy.github.io/img/posts/easiest-way-to-trade-ict-2026-notes/video_frames/42m07s_smt.jpg">
+<meta property="og:image" content="https://corezcy.github.io/img/posts/easiest-way-to-trade-ict-2026-notes/video_frames/45m07s_market_maker.jpg">
+<meta property="og:image" content="https://corezcy.github.io/img/posts/easiest-way-to-trade-ict-2026-notes/video_frames/52m58s_system.jpg">
+<meta property="og:image" content="https://corezcy.github.io/img/posts/easiest-way-to-trade-ict-2026-notes/video_frames/56m40s_pretrade.jpg">
+<meta property="og:image" content="https://corezcy.github.io/img/posts/easiest-way-to-trade-ict-2026-notes/video_frames/62m18s_level_list.jpg">
+<meta property="og:image" content="https://corezcy.github.io/img/posts/easiest-way-to-trade-ict-2026-notes/04_confirmation_flip.png">
+<meta property="og:image" content="https://corezcy.github.io/img/posts/easiest-way-to-trade-ict-2026-notes/video_frames/76m24s_sfp.jpg">
+<meta property="og:image" content="https://corezcy.github.io/img/posts/easiest-way-to-trade-ict-2026-notes/05_risk_management.png">
+<meta property="og:image" content="https://corezcy.github.io/img/posts/easiest-way-to-trade-ict-2026-notes/video_frames/85m28s_risk.jpg">
+<meta property="og:image" content="https://corezcy.github.io/img/posts/easiest-way-to-trade-ict-2026-notes/06_session_playbook.png">
+<meta property="og:image" content="https://corezcy.github.io/img/posts/easiest-way-to-trade-ict-2026-notes/video_frames/93m20s_step1.jpg">
+<meta property="og:image" content="https://corezcy.github.io/img/posts/easiest-way-to-trade-ict-2026-notes/video_frames/94m10s_step2.jpg">
+<meta property="og:image" content="https://corezcy.github.io/img/posts/easiest-way-to-trade-ict-2026-notes/video_frames/97m20s_confirmation.jpg">
+<meta property="og:image" content="https://corezcy.github.io/img/posts/easiest-way-to-trade-ict-2026-notes/video_frames/99m55s_manage.jpg">
+<meta property="og:image" content="https://corezcy.github.io/img/posts/easiest-way-to-trade-ict-2026-notes/video_frames/111m24s_price_weighting.jpg">
+<meta property="article:published_time" content="2026-11-01T15:32:00.000Z">
+<meta property="article:modified_time" content="2026-11-01T15:32:27.143Z">
+<meta property="article:author" content="Corey Cheng">
+<meta property="article:tag" content="ICT">
+<meta property="article:tag" content="流动性">
+<meta property="article:tag" content="价格行为">
+<meta property="article:tag" content="交易系统">
+<meta property="article:tag" content="交易笔记">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://corezcy.github.io/img/posts/easiest-way-to-trade-ict-2026-notes/01_core_logic.png">
+  
+  
+  
+  <title>ICT 2026 新手完整课程：流动性、时间与机械交易流程 - corezcy.github.io</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"corezcy.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>乘霖</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="ICT 2026 新手完整课程：流动性、时间与机械交易流程"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2026-11-01 23:32" pubdate>
+          2026年11月1日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          9k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          76 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">ICT 2026 新手完整课程：流动性、时间与机械交易流程</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="ICT-2026-新手完整课程笔记"><a href="#ICT-2026-新手完整课程笔记" class="headerlink" title="ICT 2026 新手完整课程笔记"></a>ICT 2026 新手完整课程笔记</h1><blockquote>
+<p>来源：<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=HC2iUkI8Dh8">Easiest Way To Trade ICT in 2026 as a Beginner (2 Hours)</a><br>依据：用户提供的完整英文字幕与 SRT 时间轴<br>说明：下文是“视频观点整理＋学习提示”，不是投资建议。正文同时包含 <strong>6 张自绘教学图</strong> 与 <strong>27 张原视频关键截图</strong>；视频截图的标题均标注了可点击的时间戳。</p>
+</blockquote>
+<span id="more"></span>
+
+<h2 id="先把整门课压缩成一句话"><a href="#先把整门课压缩成一句话" class="headerlink" title="先把整门课压缩成一句话"></a>先把整门课压缩成一句话</h2><p><strong>不要先猜当天涨跌；先标出高概率“流动性会被取用”的位置，再等价格来到关键位置后出现操纵、位移与结构确认，最后把止损放在可证伪的位置，并朝下一个未被取用的流动性目标管理交易。</strong></p>
+<p><img src="/img/posts/easiest-way-to-trade-ict-2026-notes/01_core_logic.png" srcset="/img/loading.gif" lazyload alt="ICT 简化逻辑：流动性、操纵、位移、确认与目标"></p>
+<p>作者把整套方法归纳为三个问题：</p>
+<ol>
+<li><strong>Where——在哪里交易？</strong><br>前一交易日高低点、亚洲&#x2F;伦敦时段高低点、1H&#x2F;4H&#x2F;日线摆动点、公允价值缺口、订单块等。</li>
+<li><strong>What——在这些位置等什么？</strong><br>等流动性扫单、位移、收盘价失衡、倒置公允价值缺口或订单块反应。</li>
+<li><strong>When——什么时候交易？</strong><br>先等关键位置被触及；再看更低周期是否出现确认；作者的日内示例通常在纽约时间 09:30 后才允许执行。</li>
+</ol>
+<p>最终，所有分析都被压缩成一句口诀：</p>
+<blockquote>
+<p><strong>关键位置（Key Levels）＋确认（Confirmation）＝交易；只有其中一项，就是猜。</strong></p>
+</blockquote>
+<hr>
+<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul>
+<li><a href="#0-%E5%85%A8%E7%89%87%E9%80%BB%E8%BE%91%E5%9C%B0%E5%9B%BE">0. 全片逻辑地图</a></li>
+<li><a href="#1-ict-%E7%9A%84%E4%B8%96%E7%95%8C%E8%A7%82%E6%B5%81%E5%8A%A8%E6%80%A7%E8%81%AA%E6%98%8E%E9%92%B1%E4%B8%8E%E8%A2%AB%E5%9B%B0%E4%BA%A4%E6%98%93%E8%80%85">1. ICT 的世界观：流动性、聪明钱与被困交易者</a></li>
+<li><a href="#2-%E8%9C%A1%E7%83%9B%E6%91%86%E5%8A%A8%E9%AB%98%E4%BD%8E%E7%82%B9%E4%B8%8E%E5%B8%82%E5%9C%BA%E7%BB%93%E6%9E%84">2. 蜡烛、摆动高低点与市场结构</a></li>
+<li><a href="#3-premium--discount%E5%9C%A8%E8%B4%B5%E5%A4%84%E5%8D%96%E5%9C%A8%E4%BE%BF%E5%AE%9C%E5%A4%84%E4%B9%B0">3. Premium &#x2F; Discount：在贵处卖、在便宜处买</a></li>
+<li><a href="#4-%E5%86%85%E9%83%A8%E4%B8%8E%E5%A4%96%E9%83%A8%E6%B5%81%E5%8A%A8%E6%80%A7%E4%BB%B7%E6%A0%BC%E5%A6%82%E4%BD%95%E4%BB%8E%E4%B8%80%E4%B8%AA%E6%B1%A0%E5%AD%90%E8%B5%B0%E5%90%91%E5%8F%A6%E4%B8%80%E4%B8%AA%E6%B1%A0%E5%AD%90">4. 内部与外部流动性：价格如何从一个池子走向另一个池子</a></li>
+<li><a href="#5-%E5%85%AD%E7%B1%BB%E5%85%B3%E9%94%AE%E4%BB%B7%E4%BD%8D">5. 六类关键价位</a></li>
+<li><a href="#6-smt-%E8%83%8C%E7%A6%BB%E7%94%A8%E7%9B%B8%E5%85%B3%E5%B8%82%E5%9C%BA%E5%AF%BB%E6%89%BE%E4%B8%8D%E5%90%8C%E6%AD%A5">6. SMT 背离：用相关市场寻找不同步</a></li>
+<li><a href="#7-market-maker-model%E6%8A%8A%E9%AB%98%E5%91%A8%E6%9C%9F%E4%B8%80%E7%AC%94%E8%A1%8C%E6%83%85%E6%8B%86%E6%88%90%E4%BD%8E%E5%91%A8%E6%9C%9F%E8%B7%AF%E5%BE%84">7. Market Maker Model：把高周期一笔行情拆成低周期路径</a></li>
+<li><a href="#8-%E4%BA%A4%E6%98%93%E7%B3%BB%E7%BB%9Fsop-%E6%AF%94%E7%9C%8B%E5%AF%B9%E6%96%B9%E5%90%91%E6%9B%B4%E9%87%8D%E8%A6%81">8. 交易系统：SOP 比“看对方向”更重要</a></li>
+<li><a href="#9-%E7%9B%98%E5%89%8D%E5%9C%BA%E6%99%AF%E8%A7%84%E5%88%92%E4%B8%8E%E6%96%B0%E9%97%BB%E9%A3%8E%E9%99%A9">9. 盘前、场景规划与新闻风险</a></li>
+<li><a href="#10-%E7%A1%AE%E8%AE%A4%E5%8F%8D%E8%BD%AC%E4%B8%8E-flip">10. 确认、反转与 Flip</a></li>
+<li><a href="#11-%E9%A3%8E%E9%99%A9%E7%AE%A1%E7%90%86">11. 风险管理</a></li>
+<li><a href="#12-%E4%BD%9C%E8%80%85%E7%9A%84-all-in-one-%E6%9C%BA%E6%A2%B0%E4%BA%A4%E6%98%93%E6%B5%81%E7%A8%8B">12. 作者的 All-in-One 机械交易流程</a></li>
+<li><a href="#13-%E7%9B%AE%E6%A0%87%E4%BD%8D%E4%B8%8E-price-weighting%E8%AE%A9%E7%9B%88%E5%88%A9%E5%8D%95%E7%BB%A7%E7%BB%AD%E8%B7%91">13. 目标位与 Price Weighting：让盈利单继续跑</a></li>
+<li><a href="#14-%E4%BA%A4%E6%98%93%E5%BF%83%E7%90%86%E4%B8%8E%E9%95%BF%E6%9C%9F%E8%BF%9B%E6%AD%A5">14. 交易心理与长期进步</a></li>
+<li><a href="#15-%E4%B8%80%E9%A1%B5%E9%80%9F%E6%9F%A5%E8%A1%A8">15. 一页速查表</a></li>
+<li><a href="#16-%E6%9C%AF%E8%AF%AD%E8%A1%A8">16. 术语表</a></li>
+<li><a href="#17-%E5%A6%82%E4%BD%95%E6%89%B9%E5%88%A4%E6%80%A7%E5%9C%B0%E4%BD%BF%E7%94%A8%E8%BF%99%E5%A5%97%E5%86%85%E5%AE%B9">17. 如何批判性地使用这套内容</a></li>
+</ul>
+<hr>
+<h2 id="0-全片逻辑地图"><a href="#0-全片逻辑地图" class="headerlink" title="0. 全片逻辑地图"></a>0. 全片逻辑地图</h2><table>
+<thead>
+<tr>
+<th>时间</th>
+<th>章节</th>
+<th>核心问题</th>
+<th>学完应能做什么</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>00:00</td>
+<td>课程目标与成绩声明</td>
+<td>为什么会“学很多 ICT 却不会交易”</td>
+<td>知道要减少概念、建立机械流程</td>
+</tr>
+<tr>
+<td>02:23</td>
+<td>ICT 基本世界观</td>
+<td>为什么价格会找高点或低点</td>
+<td>看懂买卖侧流动性及被困订单</td>
+</tr>
+<tr>
+<td>07:04</td>
+<td>蜡烛、摆动点</td>
+<td>如何定义最基本的市场结构</td>
+<td>标出摆动高低点与失衡</td>
+</tr>
+<tr>
+<td>09:02</td>
+<td>被困交易者</td>
+<td>止损与突破单如何成为燃料</td>
+<td>推断高概率目标方向</td>
+</tr>
+<tr>
+<td>11:45</td>
+<td>市场结构</td>
+<td>什么样突破才算“有效”</td>
+<td>用位移与 FVG 过滤假高低点</td>
+</tr>
+<tr>
+<td>16:09</td>
+<td>Premium &#x2F; Discount</td>
+<td>回撤到哪里更值得关注</td>
+<td>用 0.5 中位线判断折价或溢价</td>
+</tr>
+<tr>
+<td>19:30</td>
+<td>周期配合</td>
+<td>高低周期如何对齐</td>
+<td>让高周期定背景、低周期定时点</td>
+</tr>
+<tr>
+<td>22:14</td>
+<td>IRL &#x2F; ERL</td>
+<td>价格为何总在两个池子间移动</td>
+<td>判断“从哪来、要去哪”</td>
+</tr>
+<tr>
+<td>27:36</td>
+<td>关键价位</td>
+<td>哪些 FVG、订单块值得交易</td>
+<td>只做有结构与目标语境的价位</td>
+</tr>
+<tr>
+<td>40:41</td>
+<td>时间流动性与 SMT</td>
+<td>怎样机械过滤大量高低点</td>
+<td>用日&#x2F;周&#x2F;时段与相关市场筛选</td>
+</tr>
+<tr>
+<td>45:03</td>
+<td>Market Maker Model</td>
+<td>如何不被中继结构甩下车</td>
+<td>用低周期确认持有至外部流动性</td>
+</tr>
+<tr>
+<td>50:38</td>
+<td>SOP 与策略</td>
+<td>为什么知道不等于能执行</td>
+<td>区分交易流程与入场模型</td>
+</tr>
+<tr>
+<td>56:36</td>
+<td>盘前与新闻</td>
+<td>每天开盘前准备什么</td>
+<td>标位置、看事件、做场景</td>
+</tr>
+<tr>
+<td>1:10:44</td>
+<td>确认与 Flip</td>
+<td>错了以后怎样处理</td>
+<td>区分反转与水平位失效后的翻转</td>
+</tr>
+<tr>
+<td>1:25:25</td>
+<td>风险管理</td>
+<td>怎样避免正确策略仍爆仓</td>
+<td>规定单笔、单日与连续亏损上限</td>
+</tr>
+<tr>
+<td>1:32:04</td>
+<td>All-in-One 流程</td>
+<td>如何把全部概念合成六步</td>
+<td>机械执行作者版本</td>
+</tr>
+<tr>
+<td>1:51:20</td>
+<td>Price Weighting</td>
+<td>如何避免过早止盈</td>
+<td>用摆动点移动止损让利润奔跑</td>
+</tr>
+<tr>
+<td>1:55:26</td>
+<td>交易心理</td>
+<td>如何降低“必须成功”的压力</td>
+<td>把重点从结果转为过程</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="1-ICT-的世界观：流动性、聪明钱与被困交易者"><a href="#1-ICT-的世界观：流动性、聪明钱与被困交易者" class="headerlink" title="1. ICT 的世界观：流动性、聪明钱与被困交易者"></a>1. ICT 的世界观：流动性、聪明钱与被困交易者</h2><h3 id="1-1-作者所说的“聪明钱”"><a href="#1-1-作者所说的“聪明钱”" class="headerlink" title="1.1 作者所说的“聪明钱”"></a>1.1 作者所说的“聪明钱”</h3><p>作者把“聪明钱”定义为大型市场参与者，例如银行、机构、对冲基金。他的核心叙事是：</p>
+<ul>
+<li>大型订单需要足够多的对手盘，不能凭空成交；</li>
+<li>明显高低点、趋势线、相等高低点、整数关口附近，会聚集止损单和突破单；</li>
+<li>因此这些位置像“流动性磁铁”，价格会被吸引去取用订单；</li>
+<li>大资金可能先制造假突破，拿到对手盘，再推动真正的行情。</li>
+</ul>
+<p>这是一种解释价格行为的市场微观结构叙事，不是说所有行情都能被证明由某个“庄家”操控。</p>
+<p><img src="/img/posts/easiest-way-to-trade-ict-2026-notes/video_frames/03m00s_liquidity.jpg" srcset="/img/loading.gif" lazyload alt="原视频截图 03:00：作者用 NQ 图表讲解什么是 ICT"></p>
+<p><em>视频截图｜<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=HC2iUkI8Dh8&t=180s">03:00</a>：先看区间上下沿与价格反应，而不是先猜方向。</em></p>
+<h3 id="1-2-Buy-side-Liquidity-与-Sell-side-Liquidity"><a href="#1-2-Buy-side-Liquidity-与-Sell-side-Liquidity" class="headerlink" title="1.2 Buy-side Liquidity 与 Sell-side Liquidity"></a>1.2 Buy-side Liquidity 与 Sell-side Liquidity</h3><p><strong>Buy-side Liquidity（买方流动性）</strong></p>
+<ul>
+<li>位于明显高点、区间上沿、相等高点之上；</li>
+<li>空头止损需要买入平仓；</li>
+<li>突破交易者也可能在相同位置买入；</li>
+<li>看似“突破做多”的地方，常常同时是卖方理想的出货区。</li>
+</ul>
+<p><strong>Sell-side Liquidity（卖方流动性）</strong></p>
+<p><strong>位于明显低点、区间下沿、相等低点之下；</strong></p>
+<ul>
+<li>多头止损需要卖出平仓；</li>
+<li>突破做空者也可能在相同位置卖出；</li>
+<li>看似“跌破做空”的地方，常常同时是买方理想的吸货区。</li>
+</ul>
+<p>作者的逻辑可以写成：</p>
+<blockquote>
+<p>高点上方的买入单能帮助大额卖单成交；低点下方的卖单能帮助大额买单成交。</p>
+</blockquote>
+<h3 id="1-3-“Trapped-Traders”-为什么重要"><a href="#1-3-“Trapped-Traders”-为什么重要" class="headerlink" title="1.3 “Trapped Traders” 为什么重要"></a>1.3 “Trapped Traders” 为什么重要</h3><p>如果很多人在高点上方追多，随后价格快速跌破结构，这些多头就变成被困仓位。每触发一层止损，就产生额外卖压。</p>
+<p>反过来，在低点下方追空的人一旦被“扫损后反转”，回补空头就会成为推升价格的燃料。</p>
+<p>因此作者要求反复问：</p>
+<blockquote>
+<p><strong>谁买在了不该买的位置？谁的止损正在给下一段行情提供燃料？</strong></p>
+</blockquote>
+<p><img src="/img/posts/easiest-way-to-trade-ict-2026-notes/video_frames/09m05s_trapped.jpg" srcset="/img/loading.gif" lazyload alt="原视频截图 09:05：Trapped Traders 示意图"></p>
+<p><em>视频截图｜<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=HC2iUkI8Dh8&t=545s">09:05</a>：价格从上方高点快速跌破区间后，追多者与下方追空者分别被套。</em></p>
+<h3 id="1-4-蜡烛和摆动点"><a href="#1-4-蜡烛和摆动点" class="headerlink" title="1.4 蜡烛和摆动点"></a>1.4 蜡烛和摆动点</h3><p>蜡烛只回答同一时间窗内的四个问题：</p>
+<ul>
+<li>最高价；</li>
+<li>最低价；</li>
+<li>开盘价；</li>
+<li>收盘价。</li>
+</ul>
+<p>作者的实用定义：</p>
+<ul>
+<li><strong>Swing High：</strong> 一根蜡烛的高点高于左、右邻柱高点；</li>
+<li><strong>Swing Low：</strong> 一根蜡烛的低点低于左、右邻柱低点。</li>
+</ul>
+<p>这里不需要额外复杂结构确认。先能稳定、机械地标记摆动点，再进一步讨论“哪些摆动点有意义”。</p>
+<p><img src="/img/posts/easiest-way-to-trade-ict-2026-notes/video_frames/07m13s_candles.jpg" srcset="/img/loading.gif" lazyload alt="原视频截图 07:13：蜡烛的实体、影线、开盘与收盘"></p>
+<p><em>视频截图｜<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=HC2iUkI8Dh8&t=433s">07:13</a>：幻灯片明确区分实体、影线，以及偏空 OHLC 和偏多 OLHC 的典型顺序。</em></p>
+<p><img src="/img/posts/easiest-way-to-trade-ict-2026-notes/video_frames/08m20s_swings.jpg" srcset="/img/loading.gif" lazyload alt="原视频截图 08:20：摆动高点与摆动低点的机械定义"></p>
+<p><em>视频截图｜<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=HC2iUkI8Dh8&t=500s">08:20</a>：中间蜡烛的高点高于左右邻柱即为 Swing High；低点反之。</em></p>
+<hr>
+<h2 id="2-蜡烛、摆动高低点与市场结构"><a href="#2-蜡烛、摆动高低点与市场结构" class="headerlink" title="2. 蜡烛、摆动高低点与市场结构"></a>2. 蜡烛、摆动高低点与市场结构</h2><p><img src="/img/posts/easiest-way-to-trade-ict-2026-notes/02_market_structure.png" srcset="/img/loading.gif" lazyload alt="市场结构：摆动点、假突破与位移"></p>
+<h3 id="2-1-Manipulation-与-Displacement"><a href="#2-1-Manipulation-与-Displacement" class="headerlink" title="2.1 Manipulation 与 Displacement"></a>2.1 Manipulation 与 Displacement</h3><p>作者把价格运动分成两种关键状态。</p>
+<table>
+<thead>
+<tr>
+<th>概念</th>
+<th>直观特征</th>
+<th>作者的解释</th>
+<th>后续偏向</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Manipulation（操纵）</td>
+<td>突破摆动点后又迅速收回，留下长影线，没有形成有效位移和 FVG</td>
+<td>大资金在关键位置取止损或制造错误预期</td>
+<td>预期反向</td>
+</tr>
+<tr>
+<td>Displacement（位移）</td>
+<td>连续而有力的推动，实体大，常留下 FVG</td>
+<td>没有相反方向资金愿意在该位置接单</td>
+<td>预期延续</td>
+</tr>
+</tbody></table>
+<p>简化判断：</p>
+<ul>
+<li><strong>突破但没有位移，往往是清扫；</strong></li>
+<li><strong>突破并留下失衡，才更可能代表方向变化。</strong></li>
+</ul>
+<h3 id="2-2-市场结构不是“破前高就一定继续”"><a href="#2-2-市场结构不是“破前高就一定继续”" class="headerlink" title="2.2 市场结构不是“破前高就一定继续”"></a>2.2 市场结构不是“破前高就一定继续”</h3><p>作者认为，单纯的“收盘破高低点”容易把清扫误判成趋势：</p>
+<ol>
+<li>价格突破前高或前低；</li>
+<li>如果没有新一轮位移与 FVG，倾向于把它视为 Manipulation；</li>
+<li>真正的 Market Structure Shift 通常伴随快速位移，并改变接下来的价格交付方向。</li>
+</ol>
+<p>这并非 ICT 官方唯一标准，而是作者刻意简化后的用法。</p>
+<p><img src="/img/posts/easiest-way-to-trade-ict-2026-notes/video_frames/13m30s_structure_chart.jpg" srcset="/img/loading.gif" lazyload alt="原视频截图 13:30：Displacement 与 Manipulation 的并排示意"></p>
+<p><em>视频截图｜<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=HC2iUkI8Dh8&t=810s">13:30</a>：左边是带信念的连续推动，右边是突破后失败回收。</em></p>
+<p><img src="/img/posts/easiest-way-to-trade-ict-2026-notes/video_frames/14m20s_structure_chart2.jpg" srcset="/img/loading.gif" lazyload alt="原视频截图 14:20：真实图表中的 Manipulation 与 Displacement 标注"></p>
+<p><em>视频截图｜<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=HC2iUkI8Dh8&t=860s">14:20</a>：图中用红线和 M&#x2F;D 标出了清扫与有效推动的差别。</em></p>
+<h3 id="2-3-Fair-Value-Gap（FVG）"><a href="#2-3-Fair-Value-Gap（FVG）" class="headerlink" title="2.3 Fair Value Gap（FVG）"></a>2.3 Fair Value Gap（FVG）</h3><p>三根蜡烛形成明显推动时，如果：</p>
+<ul>
+<li>第 1 根蜡烛的影线与</li>
+<li>第 3 根蜡烛的影线之间</li>
+<li>留下没有被第 2 根大实体完全覆盖的价格区间，</li>
+</ul>
+<p>就得到作者所说的 Fair Value Gap。</p>
+<p>FVG 的含义不是“价格一定返回并反弹”，而是：</p>
+<ul>
+<li>推动过程太急，成交分布留下缺口；</li>
+<li>价格回到缺口时，可能寻找迟到的订单；</li>
+<li>回到缺口后如何处理，才是执行确认。</li>
+</ul>
+<h3 id="2-4-位移后可以期待什么"><a href="#2-4-位移后可以期待什么" class="headerlink" title="2.4 位移后可以期待什么"></a>2.4 位移后可以期待什么</h3><p>作者常用的节奏是：</p>
+<ol>
+<li>向下位移并留下 FVG；</li>
+<li>默认下一段倾向继续向下；</li>
+<li>向上回撤先进入 FVG；</li>
+<li>看价格在 FVG 内是否继续制造向上位移；</li>
+<li>若不继续向上，而是出现倒置 FVG 或向下价格交付，则寻找空单。</li>
+</ol>
+<hr>
+<h2 id="3-Premium-Discount：在贵处卖、在便宜处买"><a href="#3-Premium-Discount：在贵处卖、在便宜处买" class="headerlink" title="3. Premium &#x2F; Discount：在贵处卖、在便宜处买"></a>3. Premium &#x2F; Discount：在贵处卖、在便宜处买</h2><p>作者把价格区间类比成商品：</p>
+<ul>
+<li>想卖，就在 <strong>Premium</strong> 卖；</li>
+<li>想买，就在 <strong>Discount</strong> 买。</li>
+</ul>
+<h3 id="3-1-计算方式"><a href="#3-1-计算方式" class="headerlink" title="3.1 计算方式"></a>3.1 计算方式</h3><p>使用 Fibonacci 回撤工具时，只保留：</p>
+<ul>
+<li><code>1</code></li>
+<li><code>0.5</code></li>
+<li><code>0</code></li>
+</ul>
+<p>从一段有效推动的摆动高点到摆动低点：</p>
+<ul>
+<li><code>0.5</code> 以上：Premium；</li>
+<li><code>0.5</code> 以下：Discount。</li>
+</ul>
+<p><img src="/img/posts/easiest-way-to-trade-ict-2026-notes/video_frames/17m50s_premium_fib.jpg" srcset="/img/loading.gif" lazyload alt="原视频截图 17:50：用回撤区间判断 Premium 与 Discount"></p>
+<p><em>视频截图｜<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=HC2iUkI8Dh8&t=1070s">17:50</a>：作者以新一段推动的高低点为边界，观察回撤是否进入可交易区域。</em></p>
+<h3 id="3-2-怎样使用"><a href="#3-2-怎样使用" class="headerlink" title="3.2 怎样使用"></a>3.2 怎样使用</h3><p>若大级别向下位移：</p>
+<ul>
+<li>偏向做空；</li>
+<li>优先等回撤进入 Premium 区域；</li>
+<li>再等低周期出现向下确认。</li>
+</ul>
+<p>若大级别向上位移：</p>
+<ul>
+<li>偏向做多；</li>
+<li>优先等回撤进入 Discount 区域；</li>
+<li>再等低周期出现向上确认。</li>
+</ul>
+<p>需要注意：</p>
+<ul>
+<li>Premium&#x2F;Discount 只是位置过滤器，不是入场信号；</li>
+<li>每次形成新推动后，区间需要重新标记；</li>
+<li>0.5 中位线是机械参照，不等于绝对价值线。</li>
+</ul>
+<hr>
+<h2 id="4-内部与外部流动性：价格如何从一个池子走向另一个池子"><a href="#4-内部与外部流动性：价格如何从一个池子走向另一个池子" class="headerlink" title="4. 内部与外部流动性：价格如何从一个池子走向另一个池子"></a>4. 内部与外部流动性：价格如何从一个池子走向另一个池子</h2><h3 id="4-1-Internal-Range-Liquidity（IRL）"><a href="#4-1-Internal-Range-Liquidity（IRL）" class="headerlink" title="4.1 Internal Range Liquidity（IRL）"></a>4.1 Internal Range Liquidity（IRL）</h3><p>作者把区间内部、尤其是推动留下的 FVG，称为内部流动性。</p>
+<h3 id="4-2-External-Range-Liquidity（ERL）"><a href="#4-2-External-Range-Liquidity（ERL）" class="headerlink" title="4.2 External Range Liquidity（ERL）"></a>4.2 External Range Liquidity（ERL）</h3><p>区间外部的摆动高低点，代表外部流动性。</p>
+<p>作者的循环模型：</p>
+<ol>
+<li>价格先扫外部高低点；</li>
+<li>向反方向推动，在区间内部留下 FVG；</li>
+<li>若方向继续，价格回补内部 FVG；</li>
+<li>回补后再次向新的外部高低点扩张；</li>
+<li>到达外部目标后，重复下一轮。</li>
+</ol>
+<p><img src="/img/posts/easiest-way-to-trade-ict-2026-notes/03_irl_erl_cycle.png" srcset="/img/loading.gif" lazyload alt="内部与外部流动性循环"></p>
+<p><img src="/img/posts/easiest-way-to-trade-ict-2026-notes/video_frames/23m55s_irl_chart2.jpg" srcset="/img/loading.gif" lazyload alt="原视频截图 23:55：IRL 到 ERL 的幻灯片示意"></p>
+<p><em>视频截图｜<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=HC2iUkI8Dh8&t=1435s">23:55</a>：内部灰色区域是回补路径，红色曲线标出外部高低点目标。</em></p>
+<h3 id="4-3-时间跨越长时，需要逐级缩小周期"><a href="#4-3-时间跨越长时，需要逐级缩小周期" class="headerlink" title="4.3 时间跨越长时，需要逐级缩小周期"></a>4.3 时间跨越长时，需要逐级缩小周期</h3><p>高周期上看到的是一根快速推动；低周期上会包含：</p>
+<ul>
+<li>回撤；</li>
+<li>小型假突破；</li>
+<li>新的 FVG；</li>
+<li>多次结构转换。</li>
+</ul>
+<p>作者的原则：</p>
+<ul>
+<li>高周期决定“大方向可能去哪里”；</li>
+<li>低周期决定“现在是否开始走、在哪里入场”；</li>
+<li>高周期和低周期同时显示同一方向时，才提高信心。</li>
+</ul>
+<p><img src="/img/posts/easiest-way-to-trade-ict-2026-notes/video_frames/19m34s_timeframes.jpg" srcset="/img/loading.gif" lazyload alt="原视频截图 19:34：视频给出的多周期对齐示例"></p>
+<p><em>视频截图｜<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=HC2iUkI8Dh8&t=1174s">19:34</a>：Monthly→Daily、Weekly→H4、Daily→H1、H4→M15 等配对用于从背景逐步缩小到执行。</em></p>
+<h3 id="4-4-关于-Bull-Flag"><a href="#4-4-关于-Bull-Flag" class="headerlink" title="4.4 关于 Bull Flag"></a>4.4 关于 Bull Flag</h3><p>作者用 Bull Flag 举例说明：</p>
+<ul>
+<li>大量散户等待突破后追多；</li>
+<li>突破处会积累买盘和空头止损；</li>
+<li>若向上刺破后没有真正向上位移，反而是清扫；</li>
+<li>此时目标可能转向区间另一侧的卖方流动性。</li>
+</ul>
+<p>这里应避免反向推导：<strong>出现 Bull Flag 并不自动意味着会诱多，仍要看关键位置、位移和目标。</strong></p>
+<hr>
+<h2 id="5-六类关键价位"><a href="#5-六类关键价位" class="headerlink" title="5. 六类关键价位"></a>5. 六类关键价位</h2><p><img src="/img/posts/easiest-way-to-trade-ict-2026-notes/video_frames/27m40s_keylevels.jpg" srcset="/img/loading.gif" lazyload alt="原视频截图 27:40：Key Levels — Precision vs. Guessing"></p>
+<p><em>视频截图｜<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=HC2iUkI8Dh8&t=1660s">27:40</a>：幻灯片把“关键位置”与“随便画线”的差别放在整段课程的中心。</em></p>
+<h3 id="5-1-Break-in-Structure-Gap（BOS-Gap）"><a href="#5-1-Break-in-Structure-Gap（BOS-Gap）" class="headerlink" title="5.1 Break in Structure Gap（BOS Gap）"></a>5.1 Break in Structure Gap（BOS Gap）</h3><p>作者认为最有价值的 FVG 之一，不只是“越大越好”，而是：</p>
+<ul>
+<li>一口气突破多个摆动低&#x2F;高点；</li>
+<li>代表大量原本可能接单的位置都被快速穿透；</li>
+<li>突破过程中留下大 FVG。</li>
+</ul>
+<p>这种 FVG 代表反方资金没有成功防守，趋势延续概率更高。</p>
+<p><img src="/img/posts/easiest-way-to-trade-ict-2026-notes/video_frames/29m24s_bos_fvg.jpg" srcset="/img/loading.gif" lazyload alt="原视频截图 29:24：大幅推动与 BOS Gap 示例"></p>
+<p><em>视频截图｜<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=HC2iUkI8Dh8&t=1764s">29:24</a>：图中巨大的下行推动同时穿透多段结构，作者随后用 FVG 寻找回踩位置。</em></p>
+<h3 id="5-2-Inflection-Point（IP）"><a href="#5-2-Inflection-Point（IP）" class="headerlink" title="5.2 Inflection Point（IP）"></a>5.2 Inflection Point（IP）</h3><p>这是作者自行命名的辅助概念，不应当当作 ICT 官方术语。</p>
+<p>其思路是：</p>
+<ul>
+<li>向下快速推动时，一些交易者沿破位连续追空；</li>
+<li>这些人的入场价集中在 FVG 内；</li>
+<li>当价格后来回到这些位置，迟到空头可能回补；</li>
+<li>因此 FVG 内的某些“入场聚集区”可能比整个 FVG 更精确。</li>
+</ul>
+<p>用法是缩小观察区，而不是把 FVG 内的每个点都当成支撑阻力。</p>
+<h3 id="5-3-Inverted-Fair-Value-Gap（IFVG）"><a href="#5-3-Inverted-Fair-Value-Gap（IFVG）" class="headerlink" title="5.3 Inverted Fair Value Gap（IFVG）"></a>5.3 Inverted Fair Value Gap（IFVG）</h3><p>看涨 FVG 失效并向下被连续收盘穿透，或看跌 FVG 失效并向上被穿透，可视为 FVG 倒置。</p>
+<p>作者的用法：</p>
+<ul>
+<li>价格先来到真正有意义的关键位置；</li>
+<li>在低周期出现 IFVG；</li>
+<li>这表示原本预期的回踩承接失败；</li>
+<li>可按失效方向寻找入场。</li>
+</ul>
+<p><strong>IFVG 本身不是信号；必须发生在关键位置。</strong></p>
+<p><img src="/img/posts/easiest-way-to-trade-ict-2026-notes/video_frames/34m36s_ifvg.jpg" srcset="/img/loading.gif" lazyload alt="原视频截图 34:36：被反向收盘穿透的 FVG 区域"></p>
+<p><em>视频截图｜<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=HC2iUkI8Dh8&t=2076s">34:36</a>：蓝色矩形原本是缺口，后续蜡烛反向穿过后，原有承接意义发生改变。</em></p>
+<h3 id="5-4-Price-Delivery-与收盘实体"><a href="#5-4-Price-Delivery-与收盘实体" class="headerlink" title="5.4 Price Delivery 与收盘实体"></a>5.4 Price Delivery 与收盘实体</h3><p>作者用连续收盘蜡烛判断“价格正在向哪一侧交付”：</p>
+<ul>
+<li>如果下降收盘实体不断吞没上升收盘实体，价格偏向向下交付；</li>
+<li>如果来到关键位置后，上升收盘实体反过来吞没下降实体，则可能转为向上交付。</li>
+</ul>
+<p>技巧：</p>
+<ul>
+<li>可以隐藏影线，只看蜡烛实体；</li>
+<li>成交量主要分布在实体区域，实体被反向吞没时，许多仓位进入浮亏；</li>
+<li>浮亏交易者回补，会反过来强化新方向。</li>
+</ul>
+<p>同样，这种“收盘实体转换”只在关键位置附近更值得关注。</p>
+<p><img src="/img/posts/easiest-way-to-trade-ict-2026-notes/video_frames/36m08s_delivery.jpg" srcset="/img/loading.gif" lazyload alt="原视频截图 36:08：Price Delivery 幻灯片"></p>
+<p><em>视频截图｜<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=HC2iUkI8Dh8&t=2168s">36:08</a>：价格交付回答的是“当前在找上方还是下方流动性”，不是单独的买卖按钮。</em></p>
+<h3 id="5-5-Order-Block（订单块）"><a href="#5-5-Order-Block（订单块）" class="headerlink" title="5.5 Order Block（订单块）"></a>5.5 Order Block（订单块）</h3><p>作者的定义：</p>
+<ul>
+<li>价格有力改变交付方向；</li>
+<li>离开前最后一根反向蜡烛形成区域；</li>
+<li>若后续伴随位移并产生 FVG，优先级更高；</li>
+<li>若订单块出现在关键位置，再考虑交易。</li>
+</ul>
+<p>在偏空环境：</p>
+<ul>
+<li>上涨收盘蜡烛可作为阻力区；</li>
+<li>价格回到该区域后若出现向下确认，可寻找空单。</li>
+</ul>
+<p>在偏多环境：</p>
+<ul>
+<li>下跌收盘蜡烛可作为支撑区；</li>
+<li>价格回到该区域后若出现向上确认，可寻找多单。</li>
+</ul>
+<p>作者强调：<strong>不要交易看到的每一个订单块。</strong></p>
+<p><img src="/img/posts/easiest-way-to-trade-ict-2026-notes/video_frames/39m18s_orderblock.jpg" srcset="/img/loading.gif" lazyload alt="原视频截图 39:18：看涨与看跌订单块示意"></p>
+<p><em>视频截图｜<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=HC2iUkI8Dh8&t=2358s">39:18</a>：右侧示意强调反转前最后一根反向蜡烛，并要求后续推力与位移。</em></p>
+<h3 id="5-6-时间流动性"><a href="#5-6-时间流动性" class="headerlink" title="5.6 时间流动性"></a>5.6 时间流动性</h3><p>这是作者用来过滤大量主观高低点的方法。</p>
+<p>重点是：</p>
+<ul>
+<li>前一交易日高&#x2F;低；</li>
+<li>前一周高&#x2F;低；</li>
+<li>作者定义的亚洲与伦敦时段高&#x2F;低；</li>
+<li>已经取用与尚未取用的位置；</li>
+<li>1H、4H、日线的摆动点与 FVG；</li>
+<li>相等高低点、趋势线、整数关口。</li>
+</ul>
+<p>“未被取用”比“图上很显眼”更重要。一个再漂亮的位置，若已经被穿过，就不能继续当作同一方向的关键反应位。</p>
+<p><img src="/img/posts/easiest-way-to-trade-ict-2026-notes/video_frames/40m46s_time_liquidity.jpg" srcset="/img/loading.gif" lazyload alt="原视频截图 40:46：Time Based Liquidity 幻灯片"></p>
+<p><em>视频截图｜<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=HC2iUkI8Dh8&t=2446s">40:46</a>：作者提出用周、日与时段重复性来机械过滤“哪些高低点值得看”。</em></p>
+<hr>
+<h2 id="6-SMT-背离：用相关市场寻找不同步"><a href="#6-SMT-背离：用相关市场寻找不同步" class="headerlink" title="6. SMT 背离：用相关市场寻找不同步"></a>6. SMT 背离：用相关市场寻找不同步</h2><p>SMT 全称 Smart Money Technique。作者用它观察两个相关市场是否在同一位点给出不同反应。</p>
+<h3 id="6-1-同向相关市场"><a href="#6-1-同向相关市场" class="headerlink" title="6.1 同向相关市场"></a>6.1 同向相关市场</h3><p>例如 NQ、ES、YM 通常同向。</p>
+<p>看低点时：</p>
+<ul>
+<li>NQ 形成更高的低点；</li>
+<li>ES 形成更低的低点；</li>
+<li>两者没有同步；</li>
+<li>若出现在关键位置，作者倾向认为较低低点可能是清扫，市场更容易向上。</li>
+</ul>
+<p>看高点时：</p>
+<ul>
+<li>一个指数形成更高高点；</li>
+<li>另一个只形成更低高点；</li>
+<li>若其他条件支持向下，可作为偏空汇合。</li>
+</ul>
+<h3 id="6-2-反向相关市场"><a href="#6-2-反向相关市场" class="headerlink" title="6.2 反向相关市场"></a>6.2 反向相关市场</h3><p>例如 EUR&#x2F;USD 与 DXY 通常反向。</p>
+<p>如果相关性突然破裂，也可能说明某一市场正在被快速重新定价。</p>
+<h3 id="6-3-使用限制"><a href="#6-3-使用限制" class="headerlink" title="6.3 使用限制"></a>6.3 使用限制</h3><p>作者明确说：</p>
+<ul>
+<li>SMT 是补充 confluence；</li>
+<li>关键不是看到背离，而是知道它出现在<strong>何处、何时</strong>；</li>
+<li>若两个市场都有机会，他倾向于选择结构更清晰、交易设置更好的那个。</li>
+</ul>
+<p>不要把任何两次高低点不同步都叫 SMT；它需要相关市场、同一时间段、关键位置和后续确认。</p>
+<p><img src="/img/posts/easiest-way-to-trade-ict-2026-notes/video_frames/42m07s_smt.jpg" srcset="/img/loading.gif" lazyload alt="原视频截图 42:07：NQ 与相关指数出现高低点不同步"></p>
+<p><em>视频截图｜<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=HC2iUkI8Dh8&t=2527s">42:07</a>：同一时间窗内对比相关市场，寻找一端扫掉前高&#x2F;低、另一端没有同步的情形。</em></p>
+<hr>
+<h2 id="7-Market-Maker-Model：把高周期一笔行情拆成低周期路径"><a href="#7-Market-Maker-Model：把高周期一笔行情拆成低周期路径" class="headerlink" title="7. Market Maker Model：把高周期一笔行情拆成低周期路径"></a>7. Market Maker Model：把高周期一笔行情拆成低周期路径</h2><p>作者刻意反对把 Market Maker Model 神秘化。他的简化版本是：</p>
+<ol>
+<li>高周期价格进入关键位置；</li>
+<li>切到低周期；</li>
+<li>观察回撤或盘整中的假突破；</li>
+<li>等流动性被扫后出现 Change in State of Delivery；</li>
+<li>确认自己站在同一段行情的正确一侧；</li>
+<li>持有到下一个内部或外部流动性目标。</li>
+</ol>
+<h3 id="7-1-为什么有用"><a href="#7-1-为什么有用" class="headerlink" title="7.1 为什么有用"></a>7.1 为什么有用</h3><ul>
+<li>避免看到一次回撤就反手；</li>
+<li>知道中继盘整可能是趋势继续前的清扫；</li>
+<li>敢于在回撤后加仓或移动止损；</li>
+<li>避免在同一段行情里频繁进出。</li>
+</ul>
+<h3 id="7-2-多周期对齐"><a href="#7-2-多周期对齐" class="headerlink" title="7.2 多周期对齐"></a>7.2 多周期对齐</h3><p>视频示例使用了：</p>
+<ul>
+<li>Weekly → 4H；</li>
+<li>4H → 15M；</li>
+<li>15M → 1M。</li>
+</ul>
+<p>这不是固定公式，而是“大周期给位置，小周期给执行”的逐级放大。</p>
+<p><img src="/img/posts/easiest-way-to-trade-ict-2026-notes/video_frames/45m07s_market_maker.jpg" srcset="/img/loading.gif" lazyload alt="原视频截图 45:07：Market Maker Model 路径图"></p>
+<p><em>视频截图｜<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=HC2iUkI8Dh8&t=2707s">45:07</a>：低周期回撤、再分配、清扫与扩张被画成一条可分段管理的路径。</em></p>
+<hr>
+<h2 id="8-交易系统：SOP-比“看对方向”更重要"><a href="#8-交易系统：SOP-比“看对方向”更重要" class="headerlink" title="8. 交易系统：SOP 比“看对方向”更重要"></a>8. 交易系统：SOP 比“看对方向”更重要</h2><p>作者把盈利拆成两个不同部件：</p>
+<h3 id="8-1-Standard-Operating-Procedure（SOP）"><a href="#8-1-Standard-Operating-Procedure（SOP）" class="headerlink" title="8.1 Standard Operating Procedure（SOP）"></a>8.1 Standard Operating Procedure（SOP）</h3><p>包括一切<strong>入场之外</strong>的流程：</p>
+<ul>
+<li>盘前准备；</li>
+<li>睡眠与精神状态；</li>
+<li>宏观&#x2F;财报检查；</li>
+<li>标关键位置；</li>
+<li>单笔和单日风险；</li>
+<li>连续亏损后的停手规则；</li>
+<li>记录、复盘与数据筛选；</li>
+<li>Prop Firm 规则。</li>
+</ul>
+<h3 id="8-2-Mechanical-Strategy"><a href="#8-2-Mechanical-Strategy" class="headerlink" title="8.2 Mechanical Strategy"></a>8.2 Mechanical Strategy</h3><p>负责回答：</p>
+<ul>
+<li>什么时候允许交易？</li>
+<li>在哪个位置交易？</li>
+<li>什么信号触发？</li>
+<li>止损在哪里？</li>
+<li>目标在哪里？</li>
+<li>信号失效后如何处理？</li>
+</ul>
+<p>作者认为，没有 SOP 的人即使“有策略”，临场仍会犹豫、过度交易或违反风险规则。</p>
+<h3 id="8-3-“交易应该变得无聊”"><a href="#8-3-“交易应该变得无聊”" class="headerlink" title="8.3 “交易应该变得无聊”"></a>8.3 “交易应该变得无聊”</h3><p>这句话背后不是要消除所有思考，而是把大量判断预先固化：</p>
+<ul>
+<li>位置由列表决定；</li>
+<li>触发由规则决定；</li>
+<li>错误由止损决定；</li>
+<li>当天亏损上限由账户决定；</li>
+<li>盘后按数据优化，而不是盘中被情绪优化。</li>
+</ul>
+<p><img src="/img/posts/easiest-way-to-trade-ict-2026-notes/video_frames/52m58s_system.jpg" srcset="/img/loading.gif" lazyload alt="原视频截图 52:58：可重复流程与交易计划列表"></p>
+<p><em>视频截图｜<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=HC2iUkI8Dh8&t=3178s">52:58</a>：幻灯片把 Marking Key Levels、Planning Scenarios、Risk Management 等列为系统组成。</em></p>
+<hr>
+<h2 id="9-盘前、场景规划与新闻风险"><a href="#9-盘前、场景规划与新闻风险" class="headerlink" title="9. 盘前、场景规划与新闻风险"></a>9. 盘前、场景规划与新闻风险</h2><h3 id="9-1-盘前流程"><a href="#9-1-盘前流程" class="headerlink" title="9.1 盘前流程"></a>9.1 盘前流程</h3><p>作者通常提前约 30 分钟准备：</p>
+<ol>
+<li>标出高周期关键价位；</li>
+<li>判断当天更可能扩张还是盘整；</li>
+<li>检查重大经济事件、财报与 Prop Firm 新闻限制；</li>
+<li>确定当天最多可承受多少亏损；</li>
+<li>给每个关键位置写出“反转场景”和“失效&#x2F;Flip 场景”。</li>
+</ol>
+<p>作者重视睡眠和固定晨间流程；若状态不佳，他选择不交易。</p>
+<p><img src="/img/posts/easiest-way-to-trade-ict-2026-notes/video_frames/56m40s_pretrade.jpg" srcset="/img/loading.gif" lazyload alt="原视频截图 56:40：Pre-Trade Process 盘前流程"></p>
+<p><em>视频截图｜<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=HC2iUkI8Dh8&t=3400s">56:40</a>：开盘前 30 分钟标位置、检查新闻和财报、建立至少两种情景。</em></p>
+<h3 id="9-2-新闻不是一概回避"><a href="#9-2-新闻不是一概回避" class="headerlink" title="9.2 新闻不是一概回避"></a>9.2 新闻不是一概回避</h3><p>作者不认同“永远不要交易红文件夹新闻”的绝对说法。</p>
+<p>他的实际处理是：</p>
+<ul>
+<li>不把数据公布当刻当作普通行情；</li>
+<li>重大数据前不持有普通仓位，避免流动性变薄导致滑点；</li>
+<li>数据公布后等市场重新形成结构，再按位置交易；</li>
+<li>有重大事件时可能更积极，但也可能因波动调整仓位。</li>
+</ul>
+<p>他特别提到：</p>
+<ul>
+<li>NFP；</li>
+<li>CPI；</li>
+<li>FOMC 利率决议。</li>
+</ul>
+<p>视频中的新闻方向解读只是一般化经验，并明确承认不是 100% 规律；不要拿新闻标题直接替代价格确认。</p>
+<h3 id="9-3-Prop-Firm-特有限制"><a href="#9-3-Prop-Firm-特有限制" class="headerlink" title="9.3 Prop Firm 特有限制"></a>9.3 Prop Firm 特有限制</h3><p>不同公司的规则可能包括：</p>
+<ul>
+<li>新闻窗口禁止开仓或持仓；</li>
+<li>每日最大亏损；</li>
+<li>最大回撤；</li>
+<li>单一持仓与总持仓限制；</li>
+<li>隔夜&#x2F;周末持仓限制。</li>
+</ul>
+<p><strong>规则以账户合同和当期官方说明为准，不能使用视频中的泛化经验代替。</strong></p>
+<p><img src="/img/posts/easiest-way-to-trade-ict-2026-notes/video_frames/62m18s_level_list.jpg" srcset="/img/loading.gif" lazyload alt="原视频截图 1:02:18：作者列出的关键位置检查表"></p>
+<p><em>视频截图｜<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=HC2iUkI8Dh8&t=3738s">1:02:18</a>：前一周、前一日、当前周、亚洲与伦敦时段高低，以及 1H&#x2F;4H&#x2F;日线的 Swing、FVG 和 IP。</em></p>
+<hr>
+<h2 id="10-确认、反转与-Flip"><a href="#10-确认、反转与-Flip" class="headerlink" title="10. 确认、反转与 Flip"></a>10. 确认、反转与 Flip</h2><p><img src="/img/posts/easiest-way-to-trade-ict-2026-notes/04_confirmation_flip.png" srcset="/img/loading.gif" lazyload alt="确认、反转与 Flip 的交易循环"></p>
+<h3 id="10-1-确认不是“预测一定发生”"><a href="#10-1-确认不是“预测一定发生”" class="headerlink" title="10.1 确认不是“预测一定发生”"></a>10.1 确认不是“预测一定发生”</h3><p>确认只表示：</p>
+<ul>
+<li>价格已来到预先标记的关键位置；</li>
+<li>对方流动性先被取用；</li>
+<li>随后价格用可定义的方式朝预期方向交付；</li>
+<li>若该行为失败，何时能明确认定自己错了。</li>
+</ul>
+<h3 id="10-2-Reversal-与-Flip"><a href="#10-2-Reversal-与-Flip" class="headerlink" title="10.2 Reversal 与 Flip"></a>10.2 Reversal 与 Flip</h3><p><strong>Reversal：</strong></p>
+<ul>
+<li>关键位置触达；</li>
+<li>流动性清扫；</li>
+<li>出现 IFVG、价格交付转换或结构位移；</li>
+<li>价格从原方向反向走。</li>
+</ul>
+<p><strong>Flip：</strong></p>
+<ul>
+<li>本以为某关键位置会守住；</li>
+<li>入场后价格又用反向确认否定该位置；</li>
+<li>不执着于原方向，承认该位置失效；</li>
+<li>朝列表中的下一个关键位置重新交易。</li>
+</ul>
+<p>作者把 Flip 看成新信息，而不是“连续亏损”或“报复交易”。但实际操作必须仍受单日最大亏损限制。</p>
+<h3 id="10-3-Market-Structure-Shift"><a href="#10-3-Market-Structure-Shift" class="headerlink" title="10.3 Market Structure Shift"></a>10.3 Market Structure Shift</h3><p>最传统的确认方式是：</p>
+<ol>
+<li>价格来到关键位置；</li>
+<li>反向推动并取得流动性；</li>
+<li>形成位移；</li>
+<li>突破短期结构并留下 FVG；</li>
+<li>朝新方向寻找入场。</li>
+</ol>
+<h3 id="10-4-更早的确认线索"><a href="#10-4-更早的确认线索" class="headerlink" title="10.4 更早的确认线索"></a>10.4 更早的确认线索</h3><p>作者列举了四个较早可能出现的行为：</p>
+<ol>
+<li><strong>Swing Failure Pattern（SFP）</strong>：试探前高&#x2F;前低，但无法有效收在其外；</li>
+<li><strong>Inverted FVG</strong>：原先 FVG 被反向收盘穿透；</li>
+<li><strong>Change in State of Delivery</strong>：收盘实体的多空主导权反转；</li>
+<li><strong>Unicorn</strong>：价格交付转换、订单块与 FVG 等发生在同一区域。</li>
+</ol>
+<p>这些是线索，不是四个必须全部出现的神奇按钮。越早的信号需要越强的位置与语境过滤。</p>
+<p><img src="/img/posts/easiest-way-to-trade-ict-2026-notes/video_frames/76m24s_sfp.jpg" srcset="/img/loading.gif" lazyload alt="原视频截图 1:16:24：SFP → iFVG → Change in State → Unicorn"></p>
+<p><em>视频截图｜<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=HC2iUkI8Dh8&t=4584s">1:16:24</a>：作者把更早的确认线索串成一条路径，并特别追问“如果这些全部失败怎么办”。</em></p>
+<hr>
+<h2 id="11-风险管理"><a href="#11-风险管理" class="headerlink" title="11. 风险管理"></a>11. 风险管理</h2><p><img src="/img/posts/easiest-way-to-trade-ict-2026-notes/05_risk_management.png" srcset="/img/loading.gif" lazyload alt="风险管理：单笔、单日与条件风险"></p>
+<h3 id="11-1-两根支柱"><a href="#11-1-两根支柱" class="headerlink" title="11.1 两根支柱"></a>11.1 两根支柱</h3><ol>
+<li><strong>Position Sizing：一笔最多亏多少。</strong></li>
+<li><strong>Rules：一天最多亏多少、什么时候停手。</strong></li>
+</ol>
+<p>两者缺一不可。</p>
+<h3 id="11-2-作者的三阶段说法"><a href="#11-2-作者的三阶段说法" class="headerlink" title="11.2 作者的三阶段说法"></a>11.2 作者的三阶段说法</h3><p><strong>初学者：</strong></p>
+<ul>
+<li>首要目标不是赚钱，而是存活和建立数据；</li>
+<li>使用最小仓位，单笔风险保持固定；</li>
+<li>先把流程、记录和失效条件做稳定。</li>
+</ul>
+<p><strong>中级：</strong></p>
+<ul>
+<li>开始根据设置质量调整仓位；</li>
+<li>多周期一致、关键位置清晰、确认更多时，可略大；</li>
+<li>单一确认、环境矛盾时，缩小或跳过。</li>
+</ul>
+<p><strong>熟练后：</strong></p>
+<ul>
+<li>用数据和经验调整风险；</li>
+<li>仍然保留硬性单日上限；</li>
+<li>不使用“有直觉”作为突破风险纪律的理由。</li>
+</ul>
+<p>这些层级是作者的框架，不是风险推荐。</p>
+<h3 id="11-3-一个基础仓位计算方式（补充）"><a href="#11-3-一个基础仓位计算方式（补充）" class="headerlink" title="11.3 一个基础仓位计算方式（补充）"></a>11.3 一个基础仓位计算方式（补充）</h3><p>可以用下面的通用公式代替“背固定手数”：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs text">合约数 = 可承受亏损金额 ÷（止损距离 × 每点价值）<br></code></pre></td></tr></table></figure>
+
+<p>示例：</p>
+<ul>
+<li>账户风险预算：$100；</li>
+<li>止损距离：10 点；</li>
+<li>每点价值：$5；</li>
+<li>最大合约数：$100 ÷ (10 × $5) &#x3D; 2。</li>
+</ul>
+<p>还要计入手续费、点差、隔夜费与实际滑点。</p>
+<h3 id="11-4-连续亏损"><a href="#11-4-连续亏损" class="headerlink" title="11.4 连续亏损"></a>11.4 连续亏损</h3><p>作者强调：</p>
+<ul>
+<li>连亏是正常现象；</li>
+<li>即使是高胜率策略，也可能出现多次连亏；</li>
+<li>关键是用单日亏损上限与停手规则保护账户；</li>
+<li>他个人不喜欢在一天内承受超过两次亏损，但这是他的偏好，不是普适定律。</li>
+</ul>
+<p>视频用二项分布图说明连亏概率，但没有给出完整数据假设。真实交易结果也可能有相关性、波动聚集与策略失效，不能把某个固定“93%”当作普遍常数。</p>
+<p><img src="/img/posts/easiest-way-to-trade-ict-2026-notes/video_frames/85m28s_risk.jpg" srcset="/img/loading.gif" lazyload alt="原视频截图 1:25:28：风险管理与连续亏损概率表"></p>
+<p><em>视频截图｜<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=HC2iUkI8Dh8&t=5128s">1:25:28</a>：左侧强调没有风控终将爆仓，右侧展示作者使用的连续亏损概率表。</em></p>
+<h3 id="11-5-复盘应回答的问题"><a href="#11-5-复盘应回答的问题" class="headerlink" title="11.5 复盘应回答的问题"></a>11.5 复盘应回答的问题</h3><p>作者认为单纯记录盈亏没有足够价值。应该筛选：</p>
+<ul>
+<li>哪个时段盈利&#x2F;亏损；</li>
+<li>哪类 setup 的期望更好；</li>
+<li>反转单和 Flip 单分别表现如何；</li>
+<li>单笔 R 倍数；</li>
+<li>最大有利&#x2F;不利 excursion；</li>
+<li>盈利单若按价格加权，原本还能多跑多少；</li>
+<li>是否因主观 daily bias 错过或做大错误交易。</li>
+</ul>
+<hr>
+<h2 id="12-作者的-All-in-One-机械交易流程"><a href="#12-作者的-All-in-One-机械交易流程" class="headerlink" title="12. 作者的 All-in-One 机械交易流程"></a>12. 作者的 All-in-One 机械交易流程</h2><p><img src="/img/posts/easiest-way-to-trade-ict-2026-notes/06_session_playbook.png" srcset="/img/loading.gif" lazyload alt="纽约时段的六步交易流程"></p>
+<blockquote>
+<p>以下内容复述作者在 1:32 后的完整流程。时间和标记方式来自视频；实盘前必须根据品种、平台、夏令时、Prop Firm 规则和自身数据验证。</p>
+</blockquote>
+<h3 id="Step-1｜标高周期位置"><a href="#Step-1｜标高周期位置" class="headerlink" title="Step 1｜标高周期位置"></a>Step 1｜标高周期位置</h3><ol>
+<li>日线：前一交易日高、低。</li>
+<li>周线：前一周高、低。</li>
+<li>1H&#x2F;4H&#x2F;日线：相关摆动点、FVG、订单块。</li>
+<li>只把仍可能影响当日价格的位置保留下来，清理已经失效的线。</li>
+</ol>
+<h3 id="Step-2｜用纽约时间划分隔夜区间"><a href="#Step-2｜用纽约时间划分隔夜区间" class="headerlink" title="Step 2｜用纽约时间划分隔夜区间"></a>Step 2｜用纽约时间划分隔夜区间</h3><p>作者的视频流程：</p>
+<ol>
+<li>打开 15 分钟图；</li>
+<li>在纽约时间：<ul>
+<li>前一日 18:00；</li>
+<li>当日 00:00；</li>
+<li>当日 06:00；</li>
+</ul>
+</li>
+<li>画出三条竖线；</li>
+<li>标出作者所称亚洲、伦敦时段的高低点；</li>
+<li>到 09:00 才最终固定这些隔夜高低点。</li>
+</ol>
+<p>需要特别说明：</p>
+<ul>
+<li>这是作者自己使用的时段划分，不等于所有 ICT 教程统一的 Asia&#x2F;London 时段；</li>
+<li>注意纽约夏令时与冬令时；</li>
+<li>视频没有把所有品种的时段定义详细展开，不应把这三条线当成市场定律。</li>
+</ul>
+<p><img src="/img/posts/easiest-way-to-trade-ict-2026-notes/video_frames/93m20s_step1.jpg" srcset="/img/loading.gif" lazyload alt="原视频截图 1:33:20：用纽约时间划分 Asia 与 London 区间"></p>
+<p><em>视频截图｜<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=HC2iUkI8Dh8&t=5600s">1:33:20</a>：画面直接展示了作者在 15 分钟图上放置时段分界线的做法。</em></p>
+<p><img src="/img/posts/easiest-way-to-trade-ict-2026-notes/video_frames/94m10s_step2.jpg" srcset="/img/loading.gif" lazyload alt="原视频截图 1:34:10：Step 2 Confirmation"></p>
+<p><em>视频截图｜<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=HC2iUkI8Dh8&t=5650s">1:34:10</a>：进入执行前，先确认价格从关键位置朝向下一未取用位置运行。</em></p>
+<h3 id="Step-3｜09-00-筛选“未取用”位置"><a href="#Step-3｜09-00-筛选“未取用”位置" class="headerlink" title="Step 3｜09:00 筛选“未取用”位置"></a>Step 3｜09:00 筛选“未取用”位置</h3><p>不要把所有线都当成有效：</p>
+<ul>
+<li>已经被交易到的位置，降低或取消优先级；</li>
+<li>优先关注尚未触碰的高&#x2F;低；</li>
+<li>把当前价格最接近、且仍有意义的两侧位置作为目标候选。</li>
+</ul>
+<h3 id="Step-4｜09-30-前只观察，不执行"><a href="#Step-4｜09-30-前只观察，不执行" class="headerlink" title="Step 4｜09:30 前只观察，不执行"></a>Step 4｜09:30 前只观察，不执行</h3><p>作者规则：</p>
+<ul>
+<li>纽约开盘前即使出现漂亮信号，也不交易；</li>
+<li>09:30 后，市场从关键位置开始交付，才进入执行窗口；</li>
+<li>错过盘前第一段不代表错过当天，未取用的位置仍可能提供机会。</li>
+</ul>
+<h3 id="Step-5｜形成“从-A-到-B”的场景"><a href="#Step-5｜形成“从-A-到-B”的场景" class="headerlink" title="Step 5｜形成“从 A 到 B”的场景"></a>Step 5｜形成“从 A 到 B”的场景</h3><p>例如：</p>
+<ul>
+<li>价格若在前日高遇到拒绝，目标 &#x3D; 最近的伦敦低；</li>
+<li>价格若假突破前日高后向上交付，目标 &#x3D; 更上方的未取用位置；</li>
+<li>价格若在伦敦低反转，目标 &#x3D; 最近的亚洲高；</li>
+<li>价格若令伦敦低失效，目标 &#x3D; 下一个下方位置。</li>
+</ul>
+<p>不是只写一个方向，而是写：</p>
+<blockquote>
+<p>若市场在 A 出现 X，则做多&#x2F;做空到 B；若出现 Y，则翻转到 C。</p>
+</blockquote>
+<h3 id="Step-6｜到位置后等“流动性扫单＋确认”"><a href="#Step-6｜到位置后等“流动性扫单＋确认”" class="headerlink" title="Step 6｜到位置后等“流动性扫单＋确认”"></a>Step 6｜到位置后等“流动性扫单＋确认”</h3><p>作者要求至少看到：</p>
+<ol>
+<li>价格来到关键位置；</li>
+<li>短期结构先朝不利方向被扫掉；</li>
+<li>随后出现：<ul>
+<li>IFVG，或</li>
+<li>价格交付转换，或</li>
+<li>更完整的 Market Structure Shift。</li>
+</ul>
+</li>
+<li>最好确认发生在 FVG&#x2F;订单块内。</li>
+</ol>
+<p>没有“run on liquidity”，不追第一根反向蜡烛。</p>
+<p><img src="/img/posts/easiest-way-to-trade-ict-2026-notes/video_frames/97m20s_confirmation.jpg" srcset="/img/loading.gif" lazyload alt="原视频截图 1:37:20：位置之后的扫单与空单确认"></p>
+<p><em>视频截图｜<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=HC2iUkI8Dh8&t=5840s">1:37:20</a>：价格先扫短期结构，再出现向下收盘与位移；画面右侧标出了下一个目标逻辑。</em></p>
+<h3 id="入场、止损与目标"><a href="#入场、止损与目标" class="headerlink" title="入场、止损与目标"></a>入场、止损与目标</h3><p><strong>空单示例：</strong></p>
+<ul>
+<li>前提：大方向偏向从高点走向低点；</li>
+<li>价格扫过短期高点；</li>
+<li>向下收盘实体吞没上涨实体或形成 IFVG；</li>
+<li>在确认后卖出；</li>
+<li>止损放在最近高点、失真的实体上沿或更宽的摆动高点；</li>
+<li>目标设为下一个未取用时间流动性。</li>
+</ul>
+<p><strong>多单示例：</strong></p>
+<ul>
+<li>价格扫过短期低点；</li>
+<li>向上收盘实体吞没下降实体；</li>
+<li>在确认后买入；</li>
+<li>止损放在最近摆动低点或实体下沿；</li>
+<li>目标设为最近的未取用高点。</li>
+</ul>
+<p><img src="/img/posts/easiest-way-to-trade-ict-2026-notes/video_frames/99m55s_manage.jpg" srcset="/img/loading.gif" lazyload alt="原视频截图 1:39:55：止损、目标与订单工具"></p>
+<p><em>视频截图｜<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=HC2iUkI8Dh8&t=5995s">1:39:55</a>：画面同时展示了入场、止损、目标区域与浮动盈亏标记，体现作者如何把位置和风险放进同一笔交易。</em></p>
+<h3 id="止损宽窄怎样权衡"><a href="#止损宽窄怎样权衡" class="headerlink" title="止损宽窄怎样权衡"></a>止损宽窄怎样权衡</h3><p>作者的做法：</p>
+<ul>
+<li>交易“两个关键位置之间”的中继行情时，止损更紧，使用实体或最近小摆动；</li>
+<li>交易大关键位置的第一次反转型交易时，允许更大空间，用完整摆动点；</li>
+<li>他不追求所有交易固定止损点，而追求固定“账户风险金额”。</li>
+</ul>
+<h3 id="失效后怎么办"><a href="#失效后怎么办" class="headerlink" title="失效后怎么办"></a>失效后怎么办</h3><p>如果入场后出现反向的 delivery change 或 IFVG：</p>
+<ol>
+<li>先承认当前位置可能失效；</li>
+<li>可以按入场价附近裁掉；</li>
+<li>若下一位置仍有足够风险回报，可按反向确认交易；</li>
+<li>反向交易不是报复，而是基于新目标和新的可证伪信号；</li>
+<li>仍必须满足当天最大亏损与最大交易次数规则。</li>
+</ol>
+<hr>
+<h2 id="13-目标位与-Price-Weighting：让盈利单继续跑"><a href="#13-目标位与-Price-Weighting：让盈利单继续跑" class="headerlink" title="13. 目标位与 Price Weighting：让盈利单继续跑"></a>13. 目标位与 Price Weighting：让盈利单继续跑</h2><p>作者把“到关键位置就全平”改成两步：</p>
+<ol>
+<li>到达第一个关键位置时，先评估反应；</li>
+<li>若价格仍强势突破该位置，使用摆动高低点持续移动止损；</li>
+<li>让止损成为实际止盈线。</li>
+</ol>
+<h3 id="13-1-空单移动止损"><a href="#13-1-空单移动止损" class="headerlink" title="13.1 空单移动止损"></a>13.1 空单移动止损</h3><ul>
+<li>价格向下走；</li>
+<li>每次反弹形成新的 Swing High，然后再次向下突破；</li>
+<li>把止损向下移到该 Swing High 上方；</li>
+<li>不在“目标价”机械平仓，除非出现明确反向确认。</li>
+</ul>
+<h3 id="13-2-多单移动止损"><a href="#13-2-多单移动止损" class="headerlink" title="13.2 多单移动止损"></a>13.2 多单移动止损</h3><ul>
+<li>价格向上走；</li>
+<li>每次回撤形成新的 Swing Low，然后再次向上突破；</li>
+<li>把止损向上移到该 Swing Low 下方；</li>
+<li>用下一轮向上结构继续管理。</li>
+</ul>
+<h3 id="13-3-适用条件"><a href="#13-3-适用条件" class="headerlink" title="13.3 适用条件"></a>13.3 适用条件</h3><p>这并不是“所有盈利单永不封顶”：</p>
+<ul>
+<li>需要明显扩张环境；</li>
+<li>需要在关键位置出现反应；</li>
+<li>需要低周期结构持续同向；</li>
+<li>当日波动不足、接近重要反向位置时仍可主动止盈。</li>
+</ul>
+<p>作者称这种方法为 Price Weighting，但本质上是<strong>以市场结构为基础的移动止损 &#x2F; trailing stop</strong>。视频中举了一个约 5R 的交易，通过持续跟随结构最终做到约 8R。</p>
+<p><img src="/img/posts/easiest-way-to-trade-ict-2026-notes/video_frames/111m24s_price_weighting.jpg" srcset="/img/loading.gif" lazyload alt="原视频截图 1:51:24：Price Weighting 移动止损示例"></p>
+<p><em>视频截图｜<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=HC2iUkI8Dh8&t=6684s">1:51:24</a>：价格持续延续时，作者没有在第一个目标机械全平，而是让止损跟随新结构推进。</em></p>
+<hr>
+<h2 id="14-交易心理与长期进步"><a href="#14-交易心理与长期进步" class="headerlink" title="14. 交易心理与长期进步"></a>14. 交易心理与长期进步</h2><h3 id="14-1-作者反对的思维"><a href="#14-1-作者反对的思维" class="headerlink" title="14.1 作者反对的思维"></a>14.1 作者反对的思维</h3><ul>
+<li>必须今天就证明自己；</li>
+<li>必须用交易向家人证明；</li>
+<li>输了就是策略没用；</li>
+<li>方向错了仍坚持“有纪律地”扛单；</li>
+<li>把握住每一个行情；</li>
+<li>把正常亏损解释成个人失败。</li>
+</ul>
+<h3 id="14-2-作者建议的思维"><a href="#14-2-作者建议的思维" class="headerlink" title="14.2 作者建议的思维"></a>14.2 作者建议的思维</h3><ul>
+<li>把重要性从“今天必须赚钱”降到“今天是否按流程做对”；</li>
+<li>错误的位置失效后，把它视为市场提供的新信息；</li>
+<li>复盘结果，但在盘中止盈&#x2F;止损依据规则；</li>
+<li>接受账户、连续亏损和策略回撤可能发生；</li>
+<li>先把流程做好，再期待收益。</li>
+</ul>
+<h3 id="14-3-为什么需要记录“无-bias”-vs-“有-bias”"><a href="#14-3-为什么需要记录“无-bias”-vs-“有-bias”" class="headerlink" title="14.3 为什么需要记录“无 bias” vs “有 bias”"></a>14.3 为什么需要记录“无 bias” vs “有 bias”</h3><p>作者称自己回顾 400 多笔交易后发现：</p>
+<ul>
+<li>有 daily bias 时，胜率约 55%；</li>
+<li>没有强方向 bias 时，胜率接近 70%；</li>
+<li>去掉 bias 后 profit factor 提高。</li>
+</ul>
+<p>这些数字来自作者个人、自报且未公开完整样本和计算方法，因此只能作为提醒：</p>
+<blockquote>
+<p><strong>记录“主观预设立场”是否会让你过滤相反证据、放大仓位或造成持有偏差。</strong></p>
+</blockquote>
+<p>不能据此推出“所有交易者取消偏见都会提高胜率”。</p>
+<hr>
+<h2 id="15-一页速查表"><a href="#15-一页速查表" class="headerlink" title="15. 一页速查表"></a>15. 一页速查表</h2><h3 id="盘前"><a href="#盘前" class="headerlink" title="盘前"></a>盘前</h3><ul>
+<li><input disabled="" type="checkbox"> 前一交易日高&#x2F;低</li>
+<li><input disabled="" type="checkbox"> 前一周高&#x2F;低</li>
+<li><input disabled="" type="checkbox"> 作者定义的隔夜亚洲&#x2F;伦敦高低点</li>
+<li><input disabled="" type="checkbox"> 1H&#x2F;4H&#x2F;日线 Swing、FVG、OB</li>
+<li><input disabled="" type="checkbox"> 清理已经取用的位置</li>
+<li><input disabled="" type="checkbox"> 检查重大新闻、财报与 Prop Firm 限制</li>
+<li><input disabled="" type="checkbox"> 写至少两个场景：关键位置守住做什么，失效后做什么</li>
+<li><input disabled="" type="checkbox"> 定义今日最大亏损与最大交易次数</li>
+</ul>
+<h3 id="到位置后"><a href="#到位置后" class="headerlink" title="到位置后"></a>到位置后</h3><ul>
+<li><input disabled="" type="checkbox"> 先确认价格真正进入关键位置，而不是凭“接近”</li>
+<li><input disabled="" type="checkbox"> 找短期流动性被扫</li>
+<li><input disabled="" type="checkbox"> 确认所在位置有清晰目标（下一内部&#x2F;外部流动性）</li>
+<li><input disabled="" type="checkbox"> 等 IFVG、delivery change、MSS 或 SFP 后确认</li>
+<li><input disabled="" type="checkbox"> 计算止损到目标的实际 RR，并计入滑点与成本</li>
+<li><input disabled="" type="checkbox"> 没有信号就跳过；允许整天不交易</li>
+</ul>
+<h3 id="入场后"><a href="#入场后" class="headerlink" title="入场后"></a>入场后</h3><ul>
+<li><input disabled="" type="checkbox"> 止损放在“信号失效就证明我错”的位置</li>
+<li><input disabled="" type="checkbox"> 第一目标 &#x3D; 最近未取用关键位置</li>
+<li><input disabled="" type="checkbox"> 触及目标后观察反应</li>
+<li><input disabled="" type="checkbox"> 若强突破目标，则按摆动高低点移动止损</li>
+<li><input disabled="" type="checkbox"> 出现反向确认时缩小风险或 Flip</li>
+<li><input disabled="" type="checkbox"> 触发单日亏损上限立即停止</li>
+</ul>
+<h3 id="最容易犯的三个错误"><a href="#最容易犯的三个错误" class="headerlink" title="最容易犯的三个错误"></a>最容易犯的三个错误</h3><ol>
+<li>把每个 FVG、订单块、扫高低点都当成设置；</li>
+<li>有位置但没有确认就入场，或有确认但位置没意义；</li>
+<li>用了“反转&#x2F;Flip”概念，却没有硬性风险上限。</li>
+</ol>
+<hr>
+<h2 id="16-术语表"><a href="#16-术语表" class="headerlink" title="16. 术语表"></a>16. 术语表</h2><table>
+<thead>
+<tr>
+<th>英文</th>
+<th>中文</th>
+<th>视频中的实用含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ICT</td>
+<td>Inner Circle Trader</td>
+<td>以流动性、时间、价格交付为核心的一套价格行为体系</td>
+</tr>
+<tr>
+<td>Liquidity</td>
+<td>流动性</td>
+<td>明高点上方或明低点下方聚集的止损单、突破单</td>
+</tr>
+<tr>
+<td>Buy-side Liquidity</td>
+<td>买方流动性</td>
+<td>高点上方，空头止损与追多单聚集</td>
+</tr>
+<tr>
+<td>Sell-side Liquidity</td>
+<td>卖方流动性</td>
+<td>低点下方，多头止损与追空单聚集</td>
+</tr>
+<tr>
+<td>Displacement</td>
+<td>位移</td>
+<td>有力、连续、常留下 FVG 的单边推动</td>
+</tr>
+<tr>
+<td>Manipulation</td>
+<td>操纵</td>
+<td>扫掉高低点后快速收回，未形成有效延续</td>
+</tr>
+<tr>
+<td>FVG</td>
+<td>公允价值缺口</td>
+<td>三根蜡烛推动之间的价格失衡区</td>
+</tr>
+<tr>
+<td>BOS Gap</td>
+<td>结构突破缺口</td>
+<td>一口气突破多段结构的大 FVG</td>
+</tr>
+<tr>
+<td>IFVG</td>
+<td>倒置 FVG</td>
+<td>FVG 被反向收盘穿透，承接失败</td>
+</tr>
+<tr>
+<td>OB &#x2F; Order Block</td>
+<td>订单块</td>
+<td>转向位移前最后一根反向蜡烛的区域</td>
+</tr>
+<tr>
+<td>IRL</td>
+<td>内部流动性</td>
+<td>区间内部、特别是 FVG</td>
+</tr>
+<tr>
+<td>ERL</td>
+<td>外部流动性</td>
+<td>区间外部的摆动高低点</td>
+</tr>
+<tr>
+<td>Premium</td>
+<td>溢价区</td>
+<td>有效区间 0.5 以上</td>
+</tr>
+<tr>
+<td>Discount</td>
+<td>折价区</td>
+<td>有效区间 0.5 以下</td>
+</tr>
+<tr>
+<td>SMT</td>
+<td>聪明钱背离</td>
+<td>相关市场在同一高低点出现不同步反应</td>
+</tr>
+<tr>
+<td>SFP</td>
+<td>摆动失败</td>
+<td>试探高低点但未有效收在其外</td>
+</tr>
+<tr>
+<td>CSSD</td>
+<td>价格交付状态改变</td>
+<td>收盘实体的主导方向反转</td>
+</tr>
+<tr>
+<td>MSS</td>
+<td>市场结构转换</td>
+<td>位移取得流动性并反转短期结构</td>
+</tr>
+<tr>
+<td>Market Maker Model</td>
+<td>做市商模型</td>
+<td>高周期关键位置在低周期形成清扫—转向—扩张路径</td>
+</tr>
+<tr>
+<td>Flip</td>
+<td>翻转交易</td>
+<td>原关键位置失效后，按反向确认去下一位置</td>
+</tr>
+<tr>
+<td>Price Weighting</td>
+<td>价格加权</td>
+<td>视频用法：到达目标后按摆动点移动止损</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="最后，用六句话记住全片"><a href="#最后，用六句话记住全片" class="headerlink" title="最后，用六句话记住全片"></a>最后，用六句话记住全片</h2><ol>
+<li>市场最值得观察的不是“图形名字”，而是明显高低点附近的订单。</li>
+<li>突破若没有位移与失衡，优先怀疑清扫。</li>
+<li>FVG、订单块、SMT 和 MSS 只是位置与确认的语言，不能脱离语境使用。</li>
+<li>高周期负责“去哪里”，低周期负责“何时、在哪里执行”。</li>
+<li>关键位置出现确认才做；位置失效时，目标切换到下一个位置。</li>
+<li>单笔风险、单日亏损、记录和复盘，决定这套方法能否长期存活。</li>
+</ol>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E4%BA%A4%E6%98%93/" class="category-chain-item">交易</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/ICT/" class="print-no-link">#ICT</a>
+      
+        <a href="/tags/%E6%B5%81%E5%8A%A8%E6%80%A7/" class="print-no-link">#流动性</a>
+      
+        <a href="/tags/%E4%BB%B7%E6%A0%BC%E8%A1%8C%E4%B8%BA/" class="print-no-link">#价格行为</a>
+      
+        <a href="/tags/%E4%BA%A4%E6%98%93%E7%B3%BB%E7%BB%9F/" class="print-no-link">#交易系统</a>
+      
+        <a href="/tags/%E4%BA%A4%E6%98%93%E7%AC%94%E8%AE%B0/" class="print-no-link">#交易笔记</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>ICT 2026 新手完整课程：流动性、时间与机械交易流程</div>
+      <div>https://corezcy.github.io/2026/11/01/easiest-way-to-trade-ict-2026-beginner-notes/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Corey Cheng</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2026年11月1日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2026/11/01/indigo-agentic-internet-oct-2026/" title="Indigo 10月末直播总结：向 Agentic Internet 进化">
+                        <span class="hidden-mobile">Indigo 10月末直播总结：向 Agentic Internet 进化</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
