@@ -1,4 +1,4 @@
-title: corezcy.github.io
+title: waterwoodw.github.io
 subtitle: ''
 description: ''
 keywords:
@@ -6,7 +6,7 @@ author: Corey Cheng
 language: zh-CN
 timezone: Asia/Shanghai
 
-url: https://corezcy.github.io
+url: https://waterwoodw.github.io
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -77,6 +77,6 @@ search:
 
 deploy:
   type: git
-  repo: https://github.com/Corezcy/Corezcy.github.io.git
+  repo: git@github.com:WaterWoodW/WaterWoodW.github.io.git
   branch: master
   message: "Site updated: {{ now('yyyy-LL-dd HH:mm:ss') }}"
