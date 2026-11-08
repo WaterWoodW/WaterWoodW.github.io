@@ -30,3 +30,6 @@ page404:
 
 links:
   banner_img: /img/banner.webp
+
+favicon: /img/favicon.png
+apple_touch_icon: /img/favicon.png
