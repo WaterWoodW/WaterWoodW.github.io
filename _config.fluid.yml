@@ -9,6 +9,9 @@ index:
 
 post:
   banner_img: /img/banner.webp
+  copyright:
+    author:
+      enable: false
 
 archive:
   banner_img: /img/banner.webp
