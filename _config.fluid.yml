@@ -2,37 +2,39 @@ navbar:
   blog_title: "乘霖"
 
 index:
-  banner_img: /img/banner.webp
+  banner_img: /img/banner-night.webp
   slogan:
     enable: true
     text: "博客"
 
 post:
-  banner_img: /img/banner.webp
+  banner_img: /img/banner-night.webp
   copyright:
     author:
       enable: false
 
 archive:
-  banner_img: /img/banner.webp
+  banner_img: /img/banner-night.webp
 
 category:
-  banner_img: /img/banner.webp
+  banner_img: /img/banner-night.webp
 
 tag:
-  banner_img: /img/banner.webp
+  banner_img: /img/banner-night.webp
 
 about:
-  banner_img: /img/banner.webp
+  banner_img: /img/banner-night.webp
+  icons:
+    - { class: "iconfont icon-mail", link: "mailto:shuimuchenglin@foxmail.com", tip: "shuimuchenglin@foxmail.com" }
 
 page:
-  banner_img: /img/banner.webp
+  banner_img: /img/banner-night.webp
 
 page404:
-  banner_img: /img/banner.webp
+  banner_img: /img/banner-night.webp
 
 links:
-  banner_img: /img/banner.webp
+  banner_img: /img/banner-night.webp
 
-favicon: /img/favicon.png
-apple_touch_icon: /img/favicon.png
+favicon: /img/favicon-night.png
+apple_touch_icon: /img/favicon-night.png
