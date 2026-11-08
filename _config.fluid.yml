@@ -2,7 +2,7 @@ navbar:
   blog_title: "乘霖"
 
 index:
-  banner_img: /img/banner.webp
+  banner_img: /img/home-banner.webp
   slogan:
     enable: true
     text: "博客"
