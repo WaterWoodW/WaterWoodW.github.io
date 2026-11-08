@@ -35,6 +35,10 @@ page404:
 
 links:
   banner_img: /img/banner-night.webp
+  items:
+    - { title: "Fluid Blog", intro: "主题博客", link: "https://hexo.fluid-dev.com/", avatar: "/img/favicon-night.png" }
+    - { title: "Fluid Docs", intro: "主题使用指南", link: "https://hexo.fluid-dev.com/docs/", avatar: "/img/favicon-night.png" }
+    - { title: "Fluid Repo", intro: "主题 GitHub 仓库", link: "https://github.com/fluid-dev/hexo-theme-fluid", avatar: "/img/favicon-night.png" }
 
 favicon: /img/favicon-night.png
 apple_touch_icon: /img/favicon-night.png
